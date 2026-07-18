@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garena Topup Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="main-wrapper">
+        <div class="premium-card">
+            <h1 class="brand-title">Garena Topup</h1>
+            <p class="brand-subtitle">Enter Player UID</p>
+            <div class="input-group">
+                <input type="text" id="uid" placeholder="Player UID">
+                <p id="uid-error" class="error-message">Invalid UID (Min 7 digits)</p>
+            </div>
+            <button class="btn-submit" onclick="validateAndShowDashboard()">Login</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard" class="main-wrapper hidden">
+        <div class="premium-card">
+            <h1 class="brand-title">Dashboard</h1>
+            <p class="brand-subtitle">Select Package</p>
+            <div id="item-list" class="store-grid"></div>
+        </div>
+    </div>
+
+    <!-- Buy Screen -->
+    <div id="buy-screen" class="main-wrapper hidden">
+        <div class="premium-card">
+            <h1 class="brand-title">Payment</h1>
+            <button class="option-btn" onclick="showKey()">JazzCash Details</button>
+            <div id="key-area"></div>
+            
+            <!-- Receipt Upload Section -->
+            <div class="file-upload-wrapper">
+                <p style="margin-bottom:10px; font-size:14px;">Upload Payment Screenshot:</p>
+                <input type="file" id="receipt" accept="image/*" style="color:white; margin-bottom:15px;">
+            </div>
+
+            <button class="btn-action" onclick="verifyOrder()">Verify Order</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
